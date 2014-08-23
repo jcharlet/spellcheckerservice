@@ -15,15 +15,16 @@ public class SpellCheckerController {
 	ISpellCheckerService spellCheckerService;
 
 	@RequestMapping("/check")
-	public Boolean check(@RequestParam String language,
-			@RequestParam String word)
+	public Boolean check(@RequestParam(required = true) String language,
+			@RequestParam(required = true) String word)
 			throws SpellCheckerInvalidParameterException {
 		return spellCheckerService.check(language, word);
 	}
 
 	@RequestMapping("/add")
-	public Boolean add(@RequestHeader(value = "language") String language,
-			@RequestParam String word)
+	public Boolean add(
+			@RequestHeader(value = "language", required = true) String language,
+			@RequestParam(required = true) String word)
 			throws SpellCheckerInvalidParameterException {
 		return spellCheckerService.addWord(language, word);
 	}

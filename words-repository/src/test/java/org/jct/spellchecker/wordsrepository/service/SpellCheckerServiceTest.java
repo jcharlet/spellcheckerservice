@@ -1,6 +1,8 @@
 package org.jct.spellchecker.wordsrepository.service;
 
 import static org.fest.assertions.api.Assertions.assertThat;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 import org.jct.spellchecker.wordsrepository.Application;
 import org.jct.spellchecker.wordsrepository.exception.SpellCheckerExceptionStatus;
@@ -27,7 +29,7 @@ public class SpellCheckerServiceTest {
 
 	private static final String KNOWN_WORD = "test";
 	private static final String KNOWN_LANGUAGE = "EN_test";
-	private static final String UNKNOWN_LANGUAGE = "X";
+	private static final String UNKNOWN_LANGUAGE = "FR";
 	private static final String UNKNOWN_WORD = "X";
 	private static Language enLanguage = new Language(KNOWN_LANGUAGE);
 
@@ -60,7 +62,8 @@ public class SpellCheckerServiceTest {
 		}
 
 		Assert.assertNotNull(exception);
-		Assert.assertEquals(SpellCheckerExceptionStatus.INVALID_LANGUAGE.toString(),
+		Assert.assertEquals(
+				SpellCheckerExceptionStatus.UNKNOWN_LANGUAGE.toString(),
 				exception.getMessage());
 	}
 
@@ -81,7 +84,8 @@ public class SpellCheckerServiceTest {
 		}
 
 		Assert.assertNotNull(exception);
-		Assert.assertEquals(SpellCheckerExceptionStatus.INVALID_LANGUAGE.toString(),
+		Assert.assertEquals(
+				SpellCheckerExceptionStatus.INVALID_LANGUAGE.toString(),
 				exception.getMessage());
 	}
 
@@ -95,7 +99,8 @@ public class SpellCheckerServiceTest {
 			exception = e;
 		}
 		Assert.assertNotNull(exception);
-		Assert.assertEquals(SpellCheckerExceptionStatus.INVALID_WORD.toString(),
+		Assert.assertEquals(
+				SpellCheckerExceptionStatus.INVALID_WORD.toString(),
 				exception.getMessage());
 	}
 
@@ -148,23 +153,31 @@ public class SpellCheckerServiceTest {
 	}
 
 	@Test
-	public void testAddWordWithInvalidLanguage() {
-		SpellCheckerInvalidParameterException exception = null;
+	public void testAddWordWithNewLanguage() {
+		Language newLanguage = new Language(UNKNOWN_LANGUAGE);
+		Word word = new Word(KNOWN_WORD, newLanguage);
+
 		LanguageRepository languageRepositoryMock = Mockito
 				.mock(LanguageRepository.class);
 		Mockito.when(languageRepositoryMock.findByShortCode(UNKNOWN_LANGUAGE))
 				.thenReturn(null);
-
 		spellCheckerService.setLanguageRepository(languageRepositoryMock);
 
-		try {
-			spellCheckerService.addWord(UNKNOWN_LANGUAGE, UNKNOWN_WORD);
-		} catch (SpellCheckerInvalidParameterException e) {
-			exception = e;
-		}
-		Assert.assertNotNull(exception);
-		Assert.assertEquals(SpellCheckerExceptionStatus.INVALID_LANGUAGE.toString(),
-				exception.getMessage());
+		WordRepository wordRepositoryMock = Mockito.mock(WordRepository.class);
+		Mockito.when(
+				wordRepositoryMock.findByLanguageAndName(newLanguage,
+						KNOWN_WORD)).thenReturn(word);
+		spellCheckerService.setWordRepository(wordRepositoryMock);
+
+		Boolean isAdded = spellCheckerService.addWord(UNKNOWN_LANGUAGE,
+				UNKNOWN_WORD);
+
+		assertThat(isAdded).isNotNull();
+		assertThat(isAdded).isEqualTo(true);
+
+		verify(languageRepositoryMock, times(1)).save(
+				Mockito.any(Language.class));
+		verify(wordRepositoryMock, times(1)).save(Mockito.any(Word.class));
 	}
 
 	@Test
@@ -183,7 +196,29 @@ public class SpellCheckerServiceTest {
 			exception = e;
 		}
 		Assert.assertNotNull(exception);
-		Assert.assertEquals(SpellCheckerExceptionStatus.INVALID_LANGUAGE.toString(),
+		Assert.assertEquals(
+				SpellCheckerExceptionStatus.INVALID_LANGUAGE.toString(),
+				exception.getMessage());
+	}
+
+	@Test
+	public void testAddWordWithEmptyLanguage() {
+		SpellCheckerInvalidParameterException exception = null;
+		LanguageRepository languageRepositoryMock = Mockito
+				.mock(LanguageRepository.class);
+		Mockito.when(languageRepositoryMock.findByShortCode(null)).thenReturn(
+				null);
+
+		spellCheckerService.setLanguageRepository(languageRepositoryMock);
+
+		try {
+			spellCheckerService.addWord("", UNKNOWN_WORD);
+		} catch (SpellCheckerInvalidParameterException e) {
+			exception = e;
+		}
+		Assert.assertNotNull(exception);
+		Assert.assertEquals(
+				SpellCheckerExceptionStatus.INVALID_LANGUAGE.toString(),
 				exception.getMessage());
 	}
 
@@ -203,7 +238,8 @@ public class SpellCheckerServiceTest {
 			exception = e;
 		}
 		Assert.assertNotNull(exception);
-		Assert.assertEquals(SpellCheckerExceptionStatus.INVALID_WORD.toString(),
+		Assert.assertEquals(
+				SpellCheckerExceptionStatus.INVALID_WORD.toString(),
 				exception.getMessage());
 	}
 
@@ -235,6 +271,7 @@ public class SpellCheckerServiceTest {
 				.mock(LanguageRepository.class);
 		Mockito.when(languageRepositoryMock.findByShortCode(KNOWN_LANGUAGE))
 				.thenReturn(enLanguage);
+		spellCheckerService.setLanguageRepository(languageRepositoryMock);
 
 		WordRepository wordRepositoryMock = Mockito.mock(WordRepository.class);
 		Mockito.when(
@@ -242,7 +279,6 @@ public class SpellCheckerServiceTest {
 						UNKNOWN_WORD)).thenReturn(null);
 		spellCheckerService.setWordRepository(wordRepositoryMock);
 
-		spellCheckerService.setLanguageRepository(languageRepositoryMock);
 
 		Boolean isAdded = spellCheckerService.addWord(KNOWN_LANGUAGE,
 				UNKNOWN_WORD);

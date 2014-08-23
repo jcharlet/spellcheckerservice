@@ -1,6 +1,6 @@
 package org.jct.spellchecker.wordsrepository.exception;
 
-public enum ExceptionStatus {
-	INVALID_LANGUAGE, INVALID_WORD
+public enum SpellCheckerExceptionStatus {
+	UNKNOWN_LANGUAGE, INVALID_WORD, INVALID_LANGUAGE
 
 }
