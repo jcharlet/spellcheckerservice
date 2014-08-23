@@ -23,11 +23,13 @@ public abstract class AbstractSpellCheckerDatabaseTest {
 
 	protected static Language enLanguage;
 
+	protected static final String languageShortCode = "EN_test";
+
 	protected static Word testWord;
 
 	@Before
 	public void initData() {
-		enLanguage = new Language("EN");
+		enLanguage = new Language(languageShortCode);
 		languageRepository.save(enLanguage);
 
 		testWord = new Word("test", enLanguage);

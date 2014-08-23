@@ -1,7 +1,7 @@
 package org.jct.spellchecker.wordsrepository.service.impl;
 
-import org.jct.spellchecker.wordsrepository.exception.ExceptionStatus;
-import org.jct.spellchecker.wordsrepository.exception.SpellCheckerException;
+import org.jct.spellchecker.wordsrepository.exception.SpellCheckerExceptionStatus;
+import org.jct.spellchecker.wordsrepository.exception.SpellCheckerInvalidParameterException;
 import org.jct.spellchecker.wordsrepository.jpa.entity.Language;
 import org.jct.spellchecker.wordsrepository.jpa.entity.Word;
 import org.jct.spellchecker.wordsrepository.jpa.repository.LanguageRepository;
@@ -32,18 +32,20 @@ public class SpellCheckerService implements ISpellCheckerService {
 	 * @see org.jct.spellchecker.wordsrepository.service.impl.ISpellCheckerService#check(org.jct.spellchecker.wordsrepository.jpa.entity.Language, java.lang.String)
 	 */
 	@Override
-	public boolean check(String shortCode, String name)
-			throws SpellCheckerException {
-		if (name == null) {
-			throw new SpellCheckerException(ExceptionStatus.INVALID_WORD);
+	public boolean check(String languageShortCode, String word)
+			throws SpellCheckerInvalidParameterException {
+		if (word == null) {
+			throw new SpellCheckerInvalidParameterException(
+					SpellCheckerExceptionStatus.INVALID_WORD.toString());
 		}
 
-		Language language = languageRepository.findByShortCode(shortCode);
+		Language language = languageRepository.findByShortCode(languageShortCode);
 		if (language == null) {
-			throw new SpellCheckerException(ExceptionStatus.INVALID_LANGUAGE);
+			throw new SpellCheckerInvalidParameterException(
+					SpellCheckerExceptionStatus.INVALID_LANGUAGE.toString());
 		}
-		Word word = wordRepository.findByLanguageAndName(language, name);
-		if (word == null) {
+		Word foundWord = wordRepository.findByLanguageAndName(language, word);
+		if (foundWord == null) {
 			return false;
 		}
 		return true;
@@ -57,10 +59,23 @@ public class SpellCheckerService implements ISpellCheckerService {
 	 * #addWord(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public boolean addWord(String shortCode, String name)
-			throws SpellCheckerException {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean addWord(String languageShortCode, String word)
+			throws SpellCheckerInvalidParameterException {
+		if (word == null) {
+			throw new SpellCheckerInvalidParameterException(
+					SpellCheckerExceptionStatus.INVALID_WORD.toString());
+		}
+
+		Language language = languageRepository.findByShortCode(languageShortCode);
+		if (language == null) {
+			throw new SpellCheckerInvalidParameterException(
+					SpellCheckerExceptionStatus.INVALID_LANGUAGE.toString());
+		}
+		if (wordRepository.findByLanguageAndName(language, word) != null) {
+			return false;
+		}
+		wordRepository.save(new Word(word, language));
+		return true;
 	}
 
 }

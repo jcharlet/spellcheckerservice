@@ -15,9 +15,9 @@ public class LanguageRepositoryTest extends AbstractSpellCheckerDatabaseTest {
 
 	@Test
 	public void testGetLanguageByShortCodeWithKnownShortCode() {
-		Language language = languageRepository.findByShortCode("EN");
+		Language language = languageRepository.findByShortCode(languageShortCode);
 		Assert.assertNotNull(language);
-		Assert.assertEquals("EN", language.getShortCode());
+		Assert.assertEquals(languageShortCode, language.getShortCode());
 	}
 
 	@Test
