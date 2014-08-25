@@ -152,8 +152,7 @@ public class SpellCheckerCommandTests {
 		assertEquals(true, cr.isSuccess());
 
 		assertThat(cr.getResult()).isEqualTo(
-				new StringBuilder("test added")
-						.append(OsUtils.LINE_SEPARATOR)
+				new StringBuilder("test added").append(OsUtils.LINE_SEPARATOR)
 						.append(OsUtils.LINE_SEPARATOR)
 						.append("Treatment Completed")
 						.append(OsUtils.LINE_SEPARATOR)
