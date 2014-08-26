@@ -1,8 +1,11 @@
 package org.jct.spellchecker.wordsrepository.cli.commands;
 
-import java.util.Arrays;
+import java.util.List;
 
 import org.jct.spellchecker.wordsrepository.cli.domain.SpellCheckerCliProcessData;
+import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliException;
+import org.jct.spellchecker.wordsrepository.cli.service.ISpellCheckerCliService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.core.CommandMarker;
 import org.springframework.shell.core.annotation.CliAvailabilityIndicator;
 import org.springframework.shell.core.annotation.CliCommand;
@@ -25,7 +28,12 @@ public class SpellCheckerCommands implements CommandMarker {
 
 	private SpellCheckerCliProcessData data;
 
-	private Integer wordIndex = null;
+	@Autowired
+	private ISpellCheckerCliService service;
+
+	public void setService(ISpellCheckerCliService service) {
+		this.service = service;
+	}
 
 	@CliAvailabilityIndicator({ CHECK_COMMAND })
 	public boolean isCheckCommandAvailable() {
@@ -35,30 +43,36 @@ public class SpellCheckerCommands implements CommandMarker {
 	@CliCommand(value = CHECK_COMMAND, help = "add the word requested to the common repository")
 	public String doCheckCommand(
 			@CliOption(key = { "fileName" }, mandatory = true, help = "the name of the file to check") final String fileName) {
-		check(fileName);
+
 		StringBuilder buf = new StringBuilder();
-		buf.append(getNumberOfWordsString());
-		buf.append(getAddWordQuestionString());
+		try {
+			check(fileName);
+		} catch (SpellCheckerCliException e) {
+			buf.append("An error occured during the treatment: "
+					+ e.getExceptionStatus());
+			isAddOrDiscardCommandAvailable = false;
+			return buf.toString();
+		}
+		buf.append(getNumberOfWordsMessage(this.data.getNumberOfElements()));
+		if (this.data.hasNextWord()) {
+			buf.append(getAddWordQuestionMessage(this.data.getCurrentWord()));
+		} else {
+			buf.append("All words checked");
+		}
 		return buf.toString();
 	}
 
-	private String getNumberOfWordsString() {
+	private String getNumberOfWordsMessage(Integer numberOfElements) {
 		StringBuilder buf = new StringBuilder();
-		return buf.append("There are ")
-				.append(this.data.getListOfWordsToProcess().size())
+		return buf.append("There are ").append(numberOfElements)
 				.append(" words to process.").append(OsUtils.LINE_SEPARATOR)
 				.append(OsUtils.LINE_SEPARATOR).toString();
 	}
 
-	private String getAddWordQuestionString() {
-		if (wordIndex == null) {
-			wordIndex = 0;
-		} else {
-			wordIndex++;
-		}
+	private String getAddWordQuestionMessage(String word) {
+
 		StringBuilder buf = new StringBuilder();
-		buf.append("Do you want to add ")
-				.append(this.data.getWordFromIndex(wordIndex))
+		buf.append("Do you want to add ").append(word)
 				.append(" to the common repository?")
 				.append(OsUtils.LINE_SEPARATOR);
 		return buf.toString();
@@ -66,9 +80,9 @@ public class SpellCheckerCommands implements CommandMarker {
 
 	private void check(String fileName) {
 		// LOG.log(Level.INFO, "file processed: ", fileName);
-		data = new SpellCheckerCliProcessData(Arrays.asList("this", "is", "a",
-				"test"));
-		wordIndex = null;
+		List<String> unknownWords = null;
+		unknownWords = service.checkFile(fileName);
+		data = new SpellCheckerCliProcessData(unknownWords);
 		this.isAddOrDiscardCommandAvailable = true;
 	}
 
@@ -82,8 +96,9 @@ public class SpellCheckerCommands implements CommandMarker {
 		StringBuilder buf = new StringBuilder();
 
 		buf.append(add());
-		if (wordIndex < this.data.getListOfWordsToProcess().size() - 1) {
-			buf.append(getAddWordQuestionString());
+		if (this.data.hasNextWord()) {
+			data.nextWord();
+			buf.append(getAddWordQuestionMessage(this.data.getCurrentWord()));
 		} else {
 			buf.append(completeCheckTreatment());
 		}
@@ -91,9 +106,9 @@ public class SpellCheckerCommands implements CommandMarker {
 	}
 
 	private Object add() {
-		this.data.addWordToRepository(this.data.getWordFromIndex(wordIndex));
+		this.data.addCurrentWordToRepository();
 		StringBuilder buf = new StringBuilder();
-		buf.append(this.data.getWordFromIndex(wordIndex)).append(" added")
+		buf.append(this.data.getCurrentWord()).append(" added")
 				.append(OsUtils.LINE_SEPARATOR).append(OsUtils.LINE_SEPARATOR);
 		return buf.toString();
 	}
@@ -107,10 +122,11 @@ public class SpellCheckerCommands implements CommandMarker {
 	public String doDiscardCommand() {
 		StringBuilder buf = new StringBuilder();
 		discard();
-		buf.append(this.data.getWordFromIndex(wordIndex)).append(" discarded")
+		buf.append(this.data.getCurrentWord()).append(" discarded")
 				.append(OsUtils.LINE_SEPARATOR).append(OsUtils.LINE_SEPARATOR);
-		if (wordIndex < this.data.getListOfWordsToProcess().size() - 1) {
-			buf.append(getAddWordQuestionString());
+		if (data.hasNextWord()) {
+			data.nextWord();
+			buf.append(getAddWordQuestionMessage(this.data.getCurrentWord()));
 		} else {
 			buf.append(completeCheckTreatment());
 		}
@@ -118,7 +134,7 @@ public class SpellCheckerCommands implements CommandMarker {
 	}
 
 	private void discard() {
-		this.data.discardWord(this.data.getWordFromIndex(wordIndex));
+		this.data.discardCurrentWord();
 
 	}
 

@@ -17,8 +17,18 @@ package org.jct.spellchecker.wordsrepository.cli.commands;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliException;
+import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliExceptionStatus;
+import org.jct.spellchecker.wordsrepository.cli.service.impl.SpellCheckerCliService;
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.springframework.shell.Bootstrap;
 import org.springframework.shell.core.CommandResult;
 import org.springframework.shell.core.JLineShellComponent;
@@ -28,15 +38,30 @@ public class SpellCheckerCommandTests {
 
 	private static final String TEST_FILE = "testFile";
 
+	private Bootstrap bootstrap;
+
+	private SpellCheckerCliService spellCheckerCliService;
+
+	@Before
+	public void mockServiceLayer() {
+		MockitoAnnotations.initMocks(this);
+		bootstrap = new Bootstrap();
+
+		spellCheckerCliService = Mockito.mock(SpellCheckerCliService.class);
+
+		bootstrap.getApplicationContext().getBean(SpellCheckerCommands.class)
+				.setService(spellCheckerCliService);
+	}
+
 	@Test
 	public void testSimpleTreatment() {
-		Bootstrap bootstrap = new Bootstrap();
+		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
+				Arrays.asList("this", "is", "a", "test"));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
 		CommandResult cr = shell
 				.executeCommand("check --fileName " + TEST_FILE);
-
 		assertEquals(true, cr.isSuccess());
 
 		assertEquals(
@@ -44,13 +69,14 @@ public class SpellCheckerCommandTests {
 						.append(OsUtils.LINE_SEPARATOR)
 						.append(OsUtils.LINE_SEPARATOR)
 						.append("Do you want to add this to the common repository?")
-						.append(OsUtils.LINE_SEPARATOR)
-						.toString(), cr.getResult());
+						.append(OsUtils.LINE_SEPARATOR).toString(),
+				cr.getResult());
 	}
 
 	@Test
 	public void testAddWhenNotAuthorized() {
-		Bootstrap bootstrap = new Bootstrap();
+		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
+				Arrays.asList("this", "is", "a", "test"));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -61,7 +87,8 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testDiscardWhenNotAuthorized() {
-		Bootstrap bootstrap = new Bootstrap();
+		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
+				Arrays.asList("this", "is", "a", "test"));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -72,7 +99,8 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testCheckWhenNotAuthorized() {
-		Bootstrap bootstrap = new Bootstrap();
+		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
+				Arrays.asList("this", "is", "a", "test"));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -87,7 +115,8 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testAddTreatment() {
-		Bootstrap bootstrap = new Bootstrap();
+		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
+				Arrays.asList("this", "is", "a", "test"));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -103,13 +132,14 @@ public class SpellCheckerCommandTests {
 						.append(OsUtils.LINE_SEPARATOR)
 						.append(OsUtils.LINE_SEPARATOR)
 						.append("Do you want to add is to the common repository?")
-						.append(OsUtils.LINE_SEPARATOR)
-						.toString(), cr.getResult());
+						.append(OsUtils.LINE_SEPARATOR).toString(),
+				cr.getResult());
 	}
 
 	@Test
 	public void testDiscardTreatment() {
-		Bootstrap bootstrap = new Bootstrap();
+		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
+				Arrays.asList("this", "is", "a", "test"));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -125,13 +155,14 @@ public class SpellCheckerCommandTests {
 						.append(OsUtils.LINE_SEPARATOR)
 						.append(OsUtils.LINE_SEPARATOR)
 						.append("Do you want to add is to the common repository?")
-						.append(OsUtils.LINE_SEPARATOR)
-						.toString(), cr.getResult());
+						.append(OsUtils.LINE_SEPARATOR).toString(),
+				cr.getResult());
 	}
 
 	@Test
 	public void testCompleteTreatment() {
-		Bootstrap bootstrap = new Bootstrap();
+		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
+				Arrays.asList("this", "is", "a", "test"));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -159,5 +190,40 @@ public class SpellCheckerCommandTests {
 						.append("Added words: this a test ")
 						.append(OsUtils.LINE_SEPARATOR)
 						.append("Discarded words: is ").toString());
+	}
+
+	@Test
+	public void testEmptyFile() {
+		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenThrow(
+				new SpellCheckerCliException(
+						SpellCheckerCliExceptionStatus.FILE_NOT_FOUND));
+
+		JLineShellComponent shell = bootstrap.getJLineShellComponent();
+
+		CommandResult cr = shell
+				.executeCommand("check --fileName fileNotExisting");
+
+		assertEquals(true, cr.isSuccess());
+		assertThat(cr.getResult()).isEqualTo(
+				"An error occured during the treatment: "
+						+ SpellCheckerCliExceptionStatus.FILE_NOT_FOUND
+								.toString());
+	}
+
+	@Test
+	public void testFileWithAllWordsChecked() {
+		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
+				new ArrayList<String>());
+		JLineShellComponent shell = bootstrap.getJLineShellComponent();
+
+		CommandResult cr = shell
+				.executeCommand("check --fileName fileNotExisting");
+
+		assertEquals(true, cr.isSuccess());
+		assertThat(cr.getResult()).isEqualTo(
+				new StringBuilder("There are 0 words to process.")
+						.append(OsUtils.LINE_SEPARATOR)
+						.append(OsUtils.LINE_SEPARATOR)
+						.append("All words checked").toString());
 	}
 }

@@ -147,3 +147,1264 @@ add
 discard
 add
 add
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:16:40
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:16:40
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:16:40
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:16:40
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:16:40
+check --fileName testFile
+add
+discard
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:21:28
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:21:28
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:21:28
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:21:29
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:21:29
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:21:47
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:21:47
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:21:48
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:21:48
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 11:21:48
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 19:53:49
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 19:53:49
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 19:53:49
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 19:53:49
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 19:53:49
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:00:59
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:00:59
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:00:59
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:00:59
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:00:59
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:10:26
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:10:26
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:10:26
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:10:26
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:10:26
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:32:06
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:32:06
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:32:06
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:32:06
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:32:06
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:17
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:17
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:17
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:17
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:17
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:32
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:32
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:32
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:32
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:32
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:45
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:46
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:46
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:46
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:46
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:47
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:47
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:47
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:48
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:35:48
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:36:13
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:37:06
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:38:32
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:38:32
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:38:32
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:38:33
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:38:33
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:41:27
+// [failed] check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:44:12
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:44:17
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:44:21
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:44:21
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:44:21
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:44:21
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:44:21
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:45:49
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:45:49
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:45:49
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:45:49
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:45:49
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:47:29
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:47:29
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:47:29
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:47:29
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:47:29
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:59:30
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:59:30
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:59:30
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:59:31
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 20:59:31
+check --fileName testFile
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:00:26
+check --fileName testFile
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:00:26
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:00:26
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:00:26
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:00:26
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:04:29
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:04:30
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:04:30
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:04:30
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:04:30
+check --fileName testFile
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:12:47
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:12:47
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:12:47
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:12:47
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:12:47
+check --fileName testFile
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:12:54
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:12:54
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:12:54
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:12:54
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:12:55
+check --fileName testFile
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:15:49
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:15:49
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:15:50
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:15:50
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:15:50
+check --fileName testFile
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:16:16
+check --fileName testFile
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:16:16
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:16:16
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:16:16
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:16:16
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:17:15
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:17:37
+check --fileName testFile
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:17:37
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:17:37
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:17:37
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:17:37
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:17:51
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:17:51
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:17:51
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:17:51
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:17:51
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:09
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:31
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:31
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:31
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:31
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:31
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:38
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:38
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:39
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:39
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:39
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:44
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:44
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:44
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:44
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:44
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:46
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:46
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:46
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:46
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:18:46
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:19:02
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:19:02
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:19:02
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:19:02
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:19:03
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:02
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:02
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:02
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:02
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:03
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:11
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:11
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:11
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:11
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:11
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:11
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:45
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:45
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:45
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:45
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:46
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:46
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:50
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:50
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:50
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:50
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:50
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:23:50
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:06
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:06
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:06
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:06
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:06
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:06
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:29
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:29
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:29
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:30
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:30
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:24:30
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:49
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:49
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:50
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:50
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:50
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:50
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:54
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:54
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:55
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:55
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:55
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:55
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:25:55
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:28
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:28
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:28
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:28
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:28
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:28
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:28
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:40
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:40
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:40
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:40
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:40
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:40
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:40
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:48
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:48
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:48
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:48
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:49
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:49
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:26:49
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:03
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:04
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:04
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:04
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:04
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:04
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:04
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:10
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:17
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:17
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:17
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:17
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:17
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:17
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:17
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:21
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:21
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:21
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:21
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:21
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:21
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:22
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:25
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:36
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:36
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:36
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:36
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:36
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:36
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:36
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:27:38
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:29:16
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:29:16
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:29:16
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:29:16
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:29:16
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:29:17
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:29:17
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:42
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:42
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:42
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:42
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:42
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:42
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:42
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:46
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:46
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:46
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:46
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:47
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:47
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:30:47
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:36:32
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:36:32
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:36:32
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:36:32
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:36:32
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:36:32
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:36:32
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:39:08
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:39:08
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:39:08
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:39:08
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:39:08
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:39:08
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:39:09
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:45:38
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:45:38
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:45:38
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:45:38
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:45:38
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:45:38
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:45:38
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:19
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:20
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:20
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:20
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:20
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:20
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:20
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:34
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:34
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:34
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:34
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:34
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:35
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 21:50:35
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:00:09
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:00:09
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:00:09
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:00:09
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:00:09
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:00:09
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:00:09
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:03:43
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:03:44
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:03:44
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:03:44
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:03:44
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:03:44
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:03:44
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:06
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:06
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:06
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:06
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:06
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:06
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:06
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:16
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:16
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:16
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:16
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:16
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:16
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:16
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:45
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:45
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:45
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:45
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:45
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:45
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:45
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:51
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:51
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:51
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:51
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:51
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:51
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:04:51
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:05:33
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:05:33
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:05:33
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:05:33
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:05:33
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:05:34
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:05:34
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:11:56
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:11:56
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:11:56
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:11:57
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:11:57
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:11:57
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:11:57
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:42:32
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:42:32
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:42:32
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:42:32
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:42:32
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:42:32
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:42:32
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:21
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:21
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:22
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:22
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:22
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:22
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:22
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:51
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:51
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:51
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:51
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:51
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:52
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:45:52
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:46:29
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:46:29
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:46:29
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:46:29
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:46:29
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:46:29
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:46:29
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:47:07
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:47:07
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:47:07
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:47:07
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:47:07
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:47:07
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:47:07
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:48:08
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:48:08
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:48:08
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:48:09
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:48:09
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:48:09
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:48:09
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:50:27
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:50:27
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:50:27
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:50:28
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:50:28
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:50:28
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 22:50:28
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:06:27
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:06:27
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:06:27
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:06:27
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:06:27
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:06:27
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:06:27
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:06
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:06
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:06
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:06
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:06
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:06
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:06
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:27
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:27
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:27
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:27
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:27
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:28
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:28
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:51
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:52
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:52
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:52
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:52
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:52
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:16:52
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:17:14
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:17:14
+check --fileName fileNotExisting
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:17:14
+check --fileName testFile
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:17:14
+check --fileName testFile
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:17:14
+check --fileName testFile
+discard
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:17:14
+check --fileName testFile
+add
+discard
+add
+add
+// null 1.1.0.RELEASE log opened at 2014-08-26 23:17:14
+check --fileName fileNotExisting
