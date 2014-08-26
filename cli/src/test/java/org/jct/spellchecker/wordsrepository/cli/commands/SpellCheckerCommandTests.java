@@ -19,8 +19,8 @@ import static org.fest.assertions.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashSet;
 
 import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliException;
 import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliExceptionStatus;
@@ -55,8 +55,11 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testSimpleTreatment() {
-		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
-				Arrays.asList("this", "is", "a", "test"));
+		when(
+				spellCheckerCliService.checkWords(Mockito
+						.any(LinkedHashSet.class))).thenReturn(
+				new LinkedHashSet<String>(new LinkedHashSet<String>(Arrays
+						.asList("this", "is", "a", "test"))));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -75,8 +78,9 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testAddWhenNotAuthorized() {
-		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
-				Arrays.asList("this", "is", "a", "test"));
+		when(spellCheckerCliService.parseFile(Mockito.anyString())).thenReturn(
+				new LinkedHashSet<String>(Arrays.asList("this", "is", "a",
+						"test")));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -87,8 +91,9 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testDiscardWhenNotAuthorized() {
-		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
-				Arrays.asList("this", "is", "a", "test"));
+		when(spellCheckerCliService.parseFile(Mockito.anyString())).thenReturn(
+				new LinkedHashSet<String>(Arrays.asList("this", "is", "a",
+						"test")));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -99,8 +104,9 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testCheckWhenNotAuthorized() {
-		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
-				Arrays.asList("this", "is", "a", "test"));
+		when(spellCheckerCliService.parseFile(Mockito.anyString())).thenReturn(
+				new LinkedHashSet<String>(Arrays.asList("this", "is", "a",
+						"test")));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -115,8 +121,10 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testAddTreatment() {
-		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
-				Arrays.asList("this", "is", "a", "test"));
+		when(spellCheckerCliService.checkWords(Mockito
+						.any(LinkedHashSet.class))).thenReturn(
+				new LinkedHashSet<String>(Arrays.asList("this", "is", "a",
+						"test")));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -138,8 +146,11 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testDiscardTreatment() {
-		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
-				Arrays.asList("this", "is", "a", "test"));
+		when(
+				spellCheckerCliService.checkWords(Mockito
+						.any(LinkedHashSet.class))).thenReturn(
+				new LinkedHashSet<String>(Arrays.asList("this", "is", "a",
+						"test")));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -161,8 +172,11 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testCompleteTreatment() {
-		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
-				Arrays.asList("this", "is", "a", "test"));
+		when(
+				spellCheckerCliService.checkWords(Mockito
+						.any(LinkedHashSet.class))).thenReturn(
+				new LinkedHashSet<String>(Arrays.asList("this", "is", "a",
+						"test")));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
@@ -194,7 +208,7 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testEmptyFile() {
-		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenThrow(
+		when(spellCheckerCliService.parseFile(Mockito.anyString())).thenThrow(
 				new SpellCheckerCliException(
 						SpellCheckerCliExceptionStatus.FILE_NOT_FOUND));
 
@@ -212,8 +226,8 @@ public class SpellCheckerCommandTests {
 
 	@Test
 	public void testFileWithAllWordsChecked() {
-		when(spellCheckerCliService.checkFile(Mockito.anyString())).thenReturn(
-				new ArrayList<String>());
+		when(spellCheckerCliService.parseFile(Mockito.anyString())).thenReturn(
+				new LinkedHashSet<String>());
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
 		CommandResult cr = shell

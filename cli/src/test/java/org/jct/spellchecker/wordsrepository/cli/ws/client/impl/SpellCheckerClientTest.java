@@ -1,7 +1,6 @@
 package org.jct.spellchecker.wordsrepository.cli.ws.client.impl;
 
 import static org.fest.assertions.api.Assertions.assertThat;
-import static org.junit.Assert.fail;
 
 import org.jct.spellchecker.wordsrepository.cli.ws.client.ISpellCheckerClient;
 import org.junit.Before;
@@ -34,8 +33,10 @@ public class SpellCheckerClientTest {
 	}
 
 	@Test
-	public void testAdd() {
-		fail("Not yet implemented");
+	public void testAddAlreadyKnownWord() {
+		Boolean isChecked = spellCheckerClient.add("EN", "test");
+		assertThat(isChecked).isNotNull();
+		assertThat(isChecked).isEqualTo(false);
 	}
 
 }

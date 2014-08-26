@@ -33,6 +33,11 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-moxy</artifactId>
+			<version>2.12</version>
+		</dependency>
+		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
@@ -60,6 +65,11 @@
 			<artifactId>spring-test</artifactId>
 			<version>4.0.3.RELEASE</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.detectlanguage</groupId>
+			<artifactId>detectlanguage</artifactId>
+			<version>1.0.5</version>
 		</dependency>
 	</dependencies>
 

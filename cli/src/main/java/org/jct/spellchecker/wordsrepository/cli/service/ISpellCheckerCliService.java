@@ -1,11 +1,15 @@
 package org.jct.spellchecker.wordsrepository.cli.service;
 
-import java.util.List;
+import java.util.LinkedHashSet;
 
 public interface ISpellCheckerCliService {
 
-	List<String> checkFile(String fileName);
+	LinkedHashSet<String> parseFile(String fileName);
 
 	String readFile(String fileName);
+
+	String detectLanguage(LinkedHashSet<String> listOfWords);
+
+	LinkedHashSet<String> checkWords(LinkedHashSet<String> uniqueWords);
 
 }

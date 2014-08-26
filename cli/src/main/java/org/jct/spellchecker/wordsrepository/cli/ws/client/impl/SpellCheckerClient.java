@@ -7,6 +7,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.glassfish.jersey.moxy.json.MoxyJsonFeature;
 import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliException;
 import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliExceptionStatus;
 import org.jct.spellchecker.wordsrepository.cli.ws.client.ISpellCheckerClient;
@@ -17,7 +18,6 @@ import org.springframework.stereotype.Service;
 @Service
 @Scope("singleton")
 // FIXME JCT code duplication
-//FIXME JCT handle json > java object
 public class SpellCheckerClient implements ISpellCheckerClient {
 
 	private static final String CHECK_PATH = "check";
@@ -27,7 +27,7 @@ public class SpellCheckerClient implements ISpellCheckerClient {
 
 	@PostConstruct
 	private void initWSClient() {
-		client = ClientBuilder.newClient();
+		client = ClientBuilder.newClient().register(MoxyJsonFeature.class);
 	}
 
 	/* (non-Javadoc)

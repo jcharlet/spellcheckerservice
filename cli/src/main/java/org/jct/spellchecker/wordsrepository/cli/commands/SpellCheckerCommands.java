@@ -1,6 +1,6 @@
 package org.jct.spellchecker.wordsrepository.cli.commands;
 
-import java.util.List;
+import java.util.LinkedHashSet;
 
 import org.jct.spellchecker.wordsrepository.cli.domain.SpellCheckerCliProcessData;
 import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliException;
@@ -80,9 +80,11 @@ public class SpellCheckerCommands implements CommandMarker {
 
 	private void check(String fileName) {
 		// LOG.log(Level.INFO, "file processed: ", fileName);
-		List<String> unknownWords = null;
-		unknownWords = service.checkFile(fileName);
-		data = new SpellCheckerCliProcessData(unknownWords);
+		LinkedHashSet<String> uniqueWords = null;
+		uniqueWords = service.parseFile(fileName);
+		String language = service.detectLanguage(uniqueWords);
+		LinkedHashSet<String> unknownWords = service.checkWords(uniqueWords);
+		data = new SpellCheckerCliProcessData(unknownWords, language);
 		this.isAddOrDiscardCommandAvailable = true;
 	}
 

@@ -1,9 +1,19 @@
 package org.jct.spellchecker.wordsrepository.cli.ws.client.model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 //TODO JCT: duplicate of WS object. to provide in a separate api module jar
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class SpellCheckerResponse {
+	@XmlElement
 	private String word;
+	@XmlElement
 	private String action;
+	@XmlElement
 	private Boolean value;
 
 	public SpellCheckerResponse() {
