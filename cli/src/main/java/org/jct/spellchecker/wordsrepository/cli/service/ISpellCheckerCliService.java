@@ -10,6 +10,9 @@ public interface ISpellCheckerCliService {
 
 	String detectLanguage(LinkedHashSet<String> listOfWords);
 
-	LinkedHashSet<String> checkWords(LinkedHashSet<String> uniqueWords);
+	LinkedHashSet<String> checkWords(LinkedHashSet<String> uniqueWords,
+			String language);
+
+	Boolean addWord(String language, String word);
 
 }

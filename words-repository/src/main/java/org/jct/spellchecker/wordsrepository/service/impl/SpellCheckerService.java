@@ -54,7 +54,8 @@ public class SpellCheckerService implements ISpellCheckerService {
 			throw new SpellCheckerInvalidParameterException(
 					SpellCheckerExceptionStatus.UNKNOWN_LANGUAGE.toString());
 		}
-		Word foundWord = wordRepository.findByLanguageAndName(language, word);
+		Word foundWord = wordRepository.findByLanguageAndName(language,
+				word.toLowerCase());
 		if (foundWord == null) {
 			return false;
 		}
@@ -85,7 +86,8 @@ public class SpellCheckerService implements ISpellCheckerService {
 		if (language == null) {
 			language = languageRepository.save(new Language(languageShortCode));
 		} else {
-			if (wordRepository.findByLanguageAndName(language, word) != null) {
+			if (wordRepository.findByLanguageAndName(language,
+					word.toLowerCase()) != null) {
 				return false;
 			}
 		}

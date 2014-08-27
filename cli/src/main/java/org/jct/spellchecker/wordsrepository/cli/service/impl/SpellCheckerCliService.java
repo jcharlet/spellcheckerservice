@@ -3,16 +3,8 @@ package org.jct.spellchecker.wordsrepository.cli.service.impl;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
-import javax.annotation.PostConstruct;
-
-import org.jct.spellchecker.wordsrepository.cli.domain.SpellCheckerStatus;
 import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliException;
 import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliExceptionStatus;
 import org.jct.spellchecker.wordsrepository.cli.service.ISpellCheckerCliService;
@@ -21,6 +13,7 @@ import org.jct.spellchecker.wordsrepository.cli.ws.client.ISpellCheckerClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 /**
  * See https://github.com/detectlanguage/detectlanguage-java
@@ -29,7 +22,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Scope("singleton")
 public class SpellCheckerCliService implements ISpellCheckerCliService {
-	private static final int NB_THREADS = 10;
+	// private static final int NB_THREADS = 10;
 
 	// protected final Logger LOG = Logger.getLogger(getClass().getName());
 
@@ -39,12 +32,12 @@ public class SpellCheckerCliService implements ISpellCheckerCliService {
 	@Autowired
 	private IDetectLanguageClient detectLanguageClient;
 
-	private ExecutorService executorService;
-
-	@PostConstruct
-	private void initExecutorService() {
-		executorService = Executors.newFixedThreadPool(NB_THREADS);
-	}
+	// private ExecutorService executorService;
+	//
+	// @PostConstruct
+	// private void initExecutorService() {
+	// executorService = Executors.newFixedThreadPool(NB_THREADS);
+	// }
 
 	/* (non-Javadoc)
 	 * @see org.jct.spellchecker.wordsrepository.cli.service.impl.ISpellCheckerCliService#checkFile(java.lang.String)
@@ -52,23 +45,19 @@ public class SpellCheckerCliService implements ISpellCheckerCliService {
 	@Override
 	public LinkedHashSet<String> parseFile(String fileName) {
 		String text = readFile(fileName);
-		String[] array = text.split("[\\n\\r\\s]+");
+		String[] array = removeUnwantedCharsFromText(text);
 		LinkedHashSet<String> listOfUniqueAndSortedWords = new LinkedHashSet<String>();
 		for (String word : array) {
-			listOfUniqueAndSortedWords.add(word);
+			listOfUniqueAndSortedWords.add(word.toLowerCase());
 		}
 		return listOfUniqueAndSortedWords;
 	}
 
-	public Map<String, SpellCheckerStatus> checkFileWithMap(String fileName) {
-		String text = readFile(fileName);
-		List<String> listOfWords = Arrays.asList(text.split("[\\n\\r\\s]+"));
-		LinkedHashSet<String> listOfUniqueWords = new LinkedHashSet<String>(
-				listOfWords);
-		for (String word : listOfUniqueWords) {
 
-		}
-		return null;
+	public String[] removeUnwantedCharsFromText(String text) {
+		String[] array = text.replaceAll("[^\\p{L} ]", " ")
+				.split("[\\n\\r\\s]+");
+		return array;
 	}
 
 
@@ -91,11 +80,23 @@ public class SpellCheckerCliService implements ISpellCheckerCliService {
 	}
 
 	@Override
-	public LinkedHashSet<String> checkWords(LinkedHashSet<String> uniqueWords) {
+	public LinkedHashSet<String> checkWords(LinkedHashSet<String> uniqueWords, String language) {
+		LinkedHashSet<String> unknownWords = new LinkedHashSet<String>();
 		for (String wordToCheck : uniqueWords) {
-
+			if (!spellCheckerClient.check(language, wordToCheck)) {
+				unknownWords.add(wordToCheck);
+			}
 		}
-		return null;
+		return unknownWords;
+	}
+
+	@Override
+	public Boolean addWord(String language, String word) {
+		if (StringUtils.isEmpty(language) || StringUtils.isEmpty(word)) {
+			throw new SpellCheckerCliException(
+					SpellCheckerCliExceptionStatus.INVALID_PARAM_TO_ADD_REQUEST);
+		}
+		return spellCheckerClient.add(language, word);
 	}
 
 }

@@ -83,7 +83,8 @@ public class SpellCheckerCommands implements CommandMarker {
 		LinkedHashSet<String> uniqueWords = null;
 		uniqueWords = service.parseFile(fileName);
 		String language = service.detectLanguage(uniqueWords);
-		LinkedHashSet<String> unknownWords = service.checkWords(uniqueWords);
+		LinkedHashSet<String> unknownWords = service.checkWords(uniqueWords,
+				language);
 		data = new SpellCheckerCliProcessData(unknownWords, language);
 		this.isAddOrDiscardCommandAvailable = true;
 	}
@@ -108,6 +109,8 @@ public class SpellCheckerCommands implements CommandMarker {
 	}
 
 	private Object add() {
+		this.service.addWord(this.data.getLanguage(),
+				this.data.getCurrentWord());
 		this.data.addCurrentWordToRepository();
 		StringBuilder buf = new StringBuilder();
 		buf.append(this.data.getCurrentWord()).append(" added")

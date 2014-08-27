@@ -57,7 +57,8 @@ public class SpellCheckerCommandTests {
 	public void testSimpleTreatment() {
 		when(
 				spellCheckerCliService.checkWords(Mockito
-						.any(LinkedHashSet.class))).thenReturn(
+.any(LinkedHashSet.class), Mockito.anyString()))
+				.thenReturn(
 				new LinkedHashSet<String>(new LinkedHashSet<String>(Arrays
 						.asList("this", "is", "a", "test"))));
 
@@ -122,7 +123,8 @@ public class SpellCheckerCommandTests {
 	@Test
 	public void testAddTreatment() {
 		when(spellCheckerCliService.checkWords(Mockito
-						.any(LinkedHashSet.class))).thenReturn(
+.any(LinkedHashSet.class), Mockito.anyString()))
+				.thenReturn(
 				new LinkedHashSet<String>(Arrays.asList("this", "is", "a",
 						"test")));
 
@@ -148,7 +150,8 @@ public class SpellCheckerCommandTests {
 	public void testDiscardTreatment() {
 		when(
 				spellCheckerCliService.checkWords(Mockito
-						.any(LinkedHashSet.class))).thenReturn(
+.any(LinkedHashSet.class), Mockito.anyString()))
+				.thenReturn(
 				new LinkedHashSet<String>(Arrays.asList("this", "is", "a",
 						"test")));
 
@@ -174,7 +177,8 @@ public class SpellCheckerCommandTests {
 	public void testCompleteTreatment() {
 		when(
 				spellCheckerCliService.checkWords(Mockito
-						.any(LinkedHashSet.class))).thenReturn(
+.any(LinkedHashSet.class), Mockito.anyString()))
+				.thenReturn(
 				new LinkedHashSet<String>(Arrays.asList("this", "is", "a",
 						"test")));
 
