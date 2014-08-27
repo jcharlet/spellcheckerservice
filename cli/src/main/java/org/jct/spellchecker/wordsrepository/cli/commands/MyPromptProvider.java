@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author Jarred Li
- *
+ * 
  */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)

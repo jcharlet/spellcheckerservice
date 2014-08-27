@@ -2,8 +2,12 @@ package org.jct.spellchecker.wordsrepository.cli.service.impl;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Paths;
 import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliException;
 import org.jct.spellchecker.wordsrepository.cli.exception.SpellCheckerCliExceptionStatus;
@@ -11,6 +15,7 @@ import org.jct.spellchecker.wordsrepository.cli.service.ISpellCheckerCliService;
 import org.jct.spellchecker.wordsrepository.cli.ws.client.IDetectLanguageClient;
 import org.jct.spellchecker.wordsrepository.cli.ws.client.ISpellCheckerClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -22,9 +27,8 @@ import org.springframework.util.StringUtils;
 @Service
 @Scope("singleton")
 public class SpellCheckerCliService implements ISpellCheckerCliService {
-	// private static final int NB_THREADS = 10;
 
-	// protected final Logger LOG = Logger.getLogger(getClass().getName());
+	protected final Logger logger = Logger.getLogger(getClass().getName());
 
 	@Autowired
 	private ISpellCheckerClient spellCheckerClient;
@@ -32,12 +36,10 @@ public class SpellCheckerCliService implements ISpellCheckerCliService {
 	@Autowired
 	private IDetectLanguageClient detectLanguageClient;
 
-	// private ExecutorService executorService;
-	//
-	// @PostConstruct
-	// private void initExecutorService() {
-	// executorService = Executors.newFixedThreadPool(NB_THREADS);
-	// }
+
+	@Value("${detectlanguage.mockresponse}")
+	private String defaultLanguage;
+
 
 	/* (non-Javadoc)
 	 * @see org.jct.spellchecker.wordsrepository.cli.service.impl.ISpellCheckerCliService#checkFile(java.lang.String)
@@ -54,6 +56,13 @@ public class SpellCheckerCliService implements ISpellCheckerCliService {
 	}
 
 
+	/**
+	 * remove unwanted chars from a text (punctuation, whitespaces, break lines,
+	 * and others): keeps only alphabet and accents
+	 * 
+	 * @param text
+	 * @return
+	 */
 	public String[] removeUnwantedCharsFromText(String text) {
 		String[] array = text.replaceAll("[^\\p{L} ]", " ")
 				.split("[\\n\\r\\s]+");
@@ -66,6 +75,10 @@ public class SpellCheckerCliService implements ISpellCheckerCliService {
 	public String readFile(String fileName) {
 		// LOG.info("Current directory is "
 		// + new File(".").getAbsolutePath());
+		if (!Files.exists(Paths.get(fileName), LinkOption.NOFOLLOW_LINKS)) {
+			throw new SpellCheckerCliException(
+					SpellCheckerCliExceptionStatus.FILE_NOT_FOUND);
+		}
 		try {
 			return new String(Files.readAllBytes(Paths.get(fileName)));
 		} catch (IOException e) {
@@ -75,16 +88,33 @@ public class SpellCheckerCliService implements ISpellCheckerCliService {
 	}
 
 	@Override
-	public String detectLanguage(LinkedHashSet<String> listOfWords) {
-		return detectLanguageClient.detectLanguage(listOfWords.toString());
+	public String detectLanguage(Set<String> listOfWords) {
+		try {
+			return detectLanguageClient.detectLanguage(listOfWords.toString());
+		} catch (SpellCheckerCliException e) {
+			logger.log(Level.WARNING,
+					"an error occured while detecting the language. Default language returned"
+							+ e.getExceptionStatus().toString());
+			return defaultLanguage;
+		}
 	}
 
 	@Override
-	public LinkedHashSet<String> checkWords(LinkedHashSet<String> uniqueWords, String language) {
+	public LinkedHashSet<String> checkWords(Set<String> uniqueWords,
+			String language) {
 		LinkedHashSet<String> unknownWords = new LinkedHashSet<String>();
+		try {
 		for (String wordToCheck : uniqueWords) {
 			if (!spellCheckerClient.check(language, wordToCheck)) {
 				unknownWords.add(wordToCheck);
+			}
+		}
+		} catch (SpellCheckerCliException e) {
+			if (SpellCheckerCliExceptionStatus.SPELL_CHECKER_LANGUAGE_NOT_FOUND
+					.equals(e.getExceptionStatus())) {
+				unknownWords.addAll(uniqueWords);
+			} else {
+				throw e;
 			}
 		}
 		return unknownWords;

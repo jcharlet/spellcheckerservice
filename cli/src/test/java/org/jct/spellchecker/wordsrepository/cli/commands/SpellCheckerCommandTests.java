@@ -36,7 +36,8 @@ import org.springframework.shell.support.util.OsUtils;
 
 public class SpellCheckerCommandTests {
 
-	private static final String TEST_FILE = "testFile";
+	// private static final String TEST_FILE = "testFile";
+	private static final String TEST_FILE = "../ES.txt";
 
 	private Bootstrap bootstrap;
 
@@ -51,30 +52,28 @@ public class SpellCheckerCommandTests {
 
 		bootstrap.getApplicationContext().getBean(SpellCheckerCommands.class)
 				.setService(spellCheckerCliService);
-	}
+			}
 
-	@Test
-	public void testSimpleTreatment() {
+			@Test
+			public void testSimpleTreatment() {
 		when(
-				spellCheckerCliService.checkWords(Mockito
-.any(LinkedHashSet.class), Mockito.anyString()))
+				spellCheckerCliService.checkWords(
+						Mockito.any(LinkedHashSet.class), Mockito.anyString()))
 				.thenReturn(
-				new LinkedHashSet<String>(new LinkedHashSet<String>(Arrays
-						.asList("this", "is", "a", "test"))));
+						new LinkedHashSet<String>(new LinkedHashSet<String>(
+								Arrays.asList("this", "is", "a", "test"))));
 
 		JLineShellComponent shell = bootstrap.getJLineShellComponent();
 
 		CommandResult cr = shell
 				.executeCommand("check --fileName " + TEST_FILE);
+		assertThat(cr.isSuccess()).isNotNull();
 		assertEquals(true, cr.isSuccess());
+		assertThat(cr.getResult()).isInstanceOf(String.class);
+		assertThat(
+				((String) cr.getResult())
+						.contains("There are 4 words to process")).isTrue();
 
-		assertEquals(
-				new StringBuilder("There are 4 words to process.")
-						.append(OsUtils.LINE_SEPARATOR)
-						.append(OsUtils.LINE_SEPARATOR)
-						.append("Do you want to add this to the common repository?")
-						.append(OsUtils.LINE_SEPARATOR).toString(),
-				cr.getResult());
 	}
 
 	@Test
@@ -207,7 +206,8 @@ public class SpellCheckerCommandTests {
 						.append(OsUtils.LINE_SEPARATOR)
 						.append("Added words: this a test ")
 						.append(OsUtils.LINE_SEPARATOR)
-						.append("Discarded words: is ").toString());
+								.append("Those words are not valid (you discarded them): is ")
+								.toString());
 	}
 
 	@Test
@@ -238,10 +238,10 @@ public class SpellCheckerCommandTests {
 				.executeCommand("check --fileName fileNotExisting");
 
 		assertEquals(true, cr.isSuccess());
-		assertThat(cr.getResult()).isEqualTo(
-				new StringBuilder("There are 0 words to process.")
-						.append(OsUtils.LINE_SEPARATOR)
-						.append(OsUtils.LINE_SEPARATOR)
-						.append("All words checked").toString());
+		assertThat(cr.getResult()).isInstanceOf(String.class);
+		assertThat(
+				((String) cr.getResult())
+.contains("all words are valid"))
+				.isTrue();
 	}
 }

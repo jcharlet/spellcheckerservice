@@ -3,9 +3,12 @@ spellcheckerservice
 
 Simple spell checker service composed by server and client
 
-go to wordRepository folder
-java -jar ...
+Functionalities
+	Command line interface that allows to check words from a file with a database. The user can add new words to that database and in different languages.
 
-go to cli folder
-windows cmd (if on windows, for the CLI, use windows terminal cmd rather than cygwin): java -jar cli-0.0.1-SNAPSHOT.jar
-linux cmd : java -jar cli-0.0.1-SNAPSHOT.jar
+To run it, you must 
+- have database on localhost:3306 with user:"root", password:""
+- use db dump to create the schema, tables and insert data
+- run with "java -jar" either on windows or linux the two jar:
+     server: wordrepository
+     client: cli

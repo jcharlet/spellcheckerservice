@@ -2,6 +2,7 @@ package org.jct.spellchecker.wordsrepository.service.impl;
 
 import org.jct.spellchecker.wordsrepository.exception.SpellCheckerExceptionStatus;
 import org.jct.spellchecker.wordsrepository.exception.SpellCheckerInvalidParameterException;
+import org.jct.spellchecker.wordsrepository.exception.SpellCheckerUnknownLanguageException;
 import org.jct.spellchecker.wordsrepository.jpa.entity.Language;
 import org.jct.spellchecker.wordsrepository.jpa.entity.Word;
 import org.jct.spellchecker.wordsrepository.jpa.repository.LanguageRepository;
@@ -37,8 +38,7 @@ public class SpellCheckerService implements ISpellCheckerService {
 	 * java.lang.String)
 	 */
 	@Override
-	public boolean check(String languageShortCode, String word)
-			throws SpellCheckerInvalidParameterException {
+	public boolean check(String languageShortCode, String word) {
 		if (StringUtils.isEmpty(word)) {
 			throw new SpellCheckerInvalidParameterException(
 					SpellCheckerExceptionStatus.INVALID_WORD.toString());
@@ -51,8 +51,10 @@ public class SpellCheckerService implements ISpellCheckerService {
 		Language language = languageRepository
 				.findByShortCode(languageShortCode);
 		if (language == null) {
-			throw new SpellCheckerInvalidParameterException(
-					SpellCheckerExceptionStatus.UNKNOWN_LANGUAGE.toString());
+			// throw new SpellCheckerInvalidParameterException(
+			// SpellCheckerExceptionStatus.UNKNOWN_LANGUAGE.toString());
+			// FIXME JCT WORKAROUND unknown language handling
+			throw new SpellCheckerUnknownLanguageException();
 		}
 		Word foundWord = wordRepository.findByLanguageAndName(language,
 				word.toLowerCase());
@@ -70,8 +72,7 @@ public class SpellCheckerService implements ISpellCheckerService {
 	 * #addWord(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public boolean addWord(String languageShortCode, String word)
-			throws SpellCheckerInvalidParameterException {
+	public boolean addWord(String languageShortCode, String word) {
 		if (StringUtils.isEmpty(word)) {
 			throw new SpellCheckerInvalidParameterException(
 					SpellCheckerExceptionStatus.INVALID_WORD.toString());

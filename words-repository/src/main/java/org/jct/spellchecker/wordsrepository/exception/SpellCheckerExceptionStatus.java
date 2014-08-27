@@ -1,6 +1,18 @@
 package org.jct.spellchecker.wordsrepository.exception;
 
 public enum SpellCheckerExceptionStatus {
-	UNKNOWN_LANGUAGE, INVALID_WORD, INVALID_LANGUAGE
+
+	/**
+	 * The language was not found in database
+	 */
+	UNKNOWN_LANGUAGE,
+	/**
+	 * Word provided is invalid
+	 */
+	INVALID_WORD,
+	/**
+	 * language provided is invalid
+	 */
+	INVALID_LANGUAGE
 
 }

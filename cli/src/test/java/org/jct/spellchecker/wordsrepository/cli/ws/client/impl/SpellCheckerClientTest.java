@@ -4,9 +4,11 @@ import static org.fest.assertions.api.Assertions.assertThat;
 
 import org.jct.spellchecker.wordsrepository.cli.ws.client.ISpellCheckerClient;
 import org.junit.Before;
-import org.junit.Test;
 import org.springframework.shell.Bootstrap;
 
+/**
+ * Disabled not to contact distant api
+ */
 public class SpellCheckerClientTest {
 
 	private ISpellCheckerClient spellCheckerClient;
@@ -18,21 +20,21 @@ public class SpellCheckerClientTest {
 				ISpellCheckerClient.class);
 	}
 
-	@Test
+	// @Test
 	public void testCheckKnownWord() {
 		Boolean isChecked = spellCheckerClient.check("EN", "test");
 		assertThat(isChecked).isNotNull();
 		assertThat(isChecked).isEqualTo(true);
 	}
 
-	@Test
+	// @Test
 	public void testCheckUnknownWord() {
 		Boolean isChecked = spellCheckerClient.check("EN", "X");
 		assertThat(isChecked).isNotNull();
 		assertThat(isChecked).isEqualTo(false);
 	}
 
-	@Test
+	// @Test
 	public void testAddAlreadyKnownWord() {
 		Boolean isChecked = spellCheckerClient.add("EN", "test");
 		assertThat(isChecked).isNotNull();

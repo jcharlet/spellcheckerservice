@@ -19,15 +19,14 @@ import com.detectlanguage.errors.APIError;
 @Scope("singleton")
 public class DetectLanguageClient implements IDetectLanguageClient {
 
-
-	protected final Logger LOG = Logger.getLogger(getClass().getName());
+	private final Logger logger = Logger.getLogger(getClass().getName());
 
 	@Value("${detectlanguage.ismocked}")
 	private Boolean isMocked;
 
 	@Value("${detectlanguage.mockresponse}")
 	private String mockLanguage;
-	
+
 	@Value("${detectlanguage.apiKey}")
 	private String apiKey;
 
@@ -36,8 +35,12 @@ public class DetectLanguageClient implements IDetectLanguageClient {
 		DetectLanguage.apiKey = apiKey;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.jct.spellchecker.wordsrepository.cli.ws.client.impl.IDetectLanguageClient#detectLanguage(java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.jct.spellchecker.wordsrepository.cli.ws.client.impl.IDetectLanguageClient
+	 * #detectLanguage(java.lang.String)
 	 */
 	@Override
 	public String detectLanguage(String text) {
@@ -48,7 +51,7 @@ public class DetectLanguageClient implements IDetectLanguageClient {
 		try {
 			language = DetectLanguage.simpleDetect(text);
 		} catch (APIError e) {
-			LOG.log(Level.SEVERE, "DETECT_LANGUAGE_ERROR: code returned="
+			logger.log(Level.SEVERE, "DETECT_LANGUAGE_ERROR: code returned="
 					+ e.code);
 			throw new SpellCheckerCliException(
 					SpellCheckerCliExceptionStatus.DETECT_LANGUAGE_ERROR, e);

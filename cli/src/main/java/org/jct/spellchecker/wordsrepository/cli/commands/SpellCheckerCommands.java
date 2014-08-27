@@ -13,6 +13,18 @@ import org.springframework.shell.core.annotation.CliOption;
 import org.springframework.shell.support.util.OsUtils;
 import org.springframework.stereotype.Component;
 
+/**
+ * Command Line Interface <br/>
+ * 
+ * Provide all commands available on the interface:
+ * <ul>
+ * <li>check to process a file and check its words</li>
+ * <li>add to add an unknown word to the common repository</li>
+ * <li>discard to ignore an unknown word and go to the next</li>
+ * </ul>
+ */
+// TODO JCT set strings to properties for localization
+// FIXME JCT accents are wrongly displayed on cli
 @Component
 public class SpellCheckerCommands implements CommandMarker {
 
@@ -53,11 +65,26 @@ public class SpellCheckerCommands implements CommandMarker {
 			isAddOrDiscardCommandAvailable = false;
 			return buf.toString();
 		}
-		buf.append(getNumberOfWordsMessage(this.data.getNumberOfElements()));
-		if (this.data.hasNextWord()) {
+		if (this.data.getNumberOfElements() > 0) {
+			buf.append("The file was processed and all words were checked.")
+					.append(OsUtils.LINE_SEPARATOR);
+			buf.append(getNumberOfWordsMessage(this.data.getNumberOfElements()));
+			buf.append("The language found is: ")
+					.append(this.data.getLanguage())
+					.append(OsUtils.LINE_SEPARATOR);
+			buf.append(
+					"You are going to be given every word that was not recognized.")
+					.append(OsUtils.LINE_SEPARATOR);
+			buf.append(
+					"   If you want to add it to the custom dictionary, type add (or the first letters only).")
+					.append(OsUtils.LINE_SEPARATOR);
+			buf.append(
+					"   If you want to discard it and move to the next, type discard (or the first letters only).")
+					.append(OsUtils.LINE_SEPARATOR)
+					.append(OsUtils.LINE_SEPARATOR);
 			buf.append(getAddWordQuestionMessage(this.data.getCurrentWord()));
 		} else {
-			buf.append("All words checked");
+			buf.append("The file was processed and all words are valid.");
 		}
 		return buf.toString();
 	}
@@ -153,7 +180,7 @@ public class SpellCheckerCommands implements CommandMarker {
 			buf.append(word).append(" ");
 		}
 		buf.append(OsUtils.LINE_SEPARATOR);
-		buf.append("Discarded words: ");
+		buf.append("Those words are not valid (you discarded them): ");
 		for (String word : this.data.getListOfDiscardedWords()) {
 			buf.append(word).append(" ");
 		}

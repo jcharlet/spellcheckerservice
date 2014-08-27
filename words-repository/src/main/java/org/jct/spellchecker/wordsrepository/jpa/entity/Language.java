@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Language identified by its shortCode ("en" for English)
+ * 
+ */
 @Entity
 public class Language {
 

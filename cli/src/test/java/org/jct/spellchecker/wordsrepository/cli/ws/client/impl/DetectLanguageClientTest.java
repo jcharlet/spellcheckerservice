@@ -4,9 +4,11 @@ import static org.fest.assertions.api.Assertions.assertThat;
 
 import org.jct.spellchecker.wordsrepository.cli.ws.client.IDetectLanguageClient;
 import org.junit.Before;
-import org.junit.Test;
 import org.springframework.shell.Bootstrap;
 
+/**
+ * Disabled not to contact distant api
+ */
 public class DetectLanguageClientTest {
 
 	private IDetectLanguageClient detectLanguageClient;
@@ -18,10 +20,7 @@ public class DetectLanguageClientTest {
 				IDetectLanguageClient.class);
 	}
 
-	/**
-	 * Disabled not to contact distant api
-	 */
-	@Test
+	// @Test
 	public void testDetectLanguageEN() {
 		String language = detectLanguageClient
 				.detectLanguage("this is a test in english");

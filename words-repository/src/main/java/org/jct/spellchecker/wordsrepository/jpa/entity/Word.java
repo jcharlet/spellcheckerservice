@@ -7,6 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+/**
+ * Word provided in a certain language
+ * 
+ */
 @Entity
 public class Word {
 

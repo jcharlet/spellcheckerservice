@@ -30,8 +30,12 @@ public class SpellCheckerClient implements ISpellCheckerClient {
 		client = ClientBuilder.newClient().register(MoxyJsonFeature.class);
 	}
 
-	/* (non-Javadoc)
-	 * @see org.jct.spellchecker.wordsrepository.cli.ws.client.impl.ISpellCheckerClient#check(java.lang.String, java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.jct.spellchecker.wordsrepository.cli.ws.client.impl.ISpellCheckerClient
+	 * #check(java.lang.String, java.lang.String)
 	 */
 	@Override
 	public Boolean check(String language, String word) {
@@ -41,18 +45,35 @@ public class SpellCheckerClient implements ISpellCheckerClient {
 		Response genericResponse = target.queryParam("word", word)
 				.queryParam("language", language)
 				.request(MediaType.APPLICATION_JSON_TYPE).get();
+		SpellCheckerResponse addResponse;
 		try {
-			SpellCheckerResponse addResponse = genericResponse
+			addResponse = genericResponse
 					.readEntity(SpellCheckerResponse.class);
-			return addResponse.getValue();
 		} catch (Exception e) {
 			throw new SpellCheckerCliException(
-					SpellCheckerCliExceptionStatus.WS_ERROR, e);
+					SpellCheckerCliExceptionStatus.WS_CLIENT_ERROR, e);
 		}
+		// FIXME JCT the handling of exceptions is not correct. The response
+		// generated from the WS should be provided in a proper POJO and treated
+		if (addResponse == null || addResponse.getAction() == null) {
+			// FIXME JCT WORKAROUND UNKNOWN LANGUAGE HANDLING
+			if (genericResponse.getStatus() == 405) {
+				throw new SpellCheckerCliException(
+						SpellCheckerCliExceptionStatus.SPELL_CHECKER_LANGUAGE_NOT_FOUND);
+			}
+			throw new SpellCheckerCliException(
+					SpellCheckerCliExceptionStatus.WS_CLIENT_ERROR);
+		}
+		return addResponse.getValue();
+
 	}
 
-	/* (non-Javadoc)
-	 * @see org.jct.spellchecker.wordsrepository.cli.ws.client.impl.ISpellCheckerClient#add(java.lang.String, java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.jct.spellchecker.wordsrepository.cli.ws.client.impl.ISpellCheckerClient
+	 * #add(java.lang.String, java.lang.String)
 	 */
 	@Override
 	public Boolean add(String language, String word) {
@@ -69,7 +90,7 @@ public class SpellCheckerClient implements ISpellCheckerClient {
 			return addResponse.getValue();
 		} catch (Exception e) {
 			throw new SpellCheckerCliException(
-					SpellCheckerCliExceptionStatus.WS_ERROR, e);
+					SpellCheckerCliExceptionStatus.WS_CLIENT_ERROR, e);
 		}
 	}
 

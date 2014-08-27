@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.shell.Bootstrap;
 
-public class ISpellCheckerCliServiceTest {
+public class SpellCheckerCliServiceTest {
 
 	private SpellCheckerCliService spellCheckerCliService;
 
@@ -30,7 +30,7 @@ public class ISpellCheckerCliServiceTest {
 		}
 		assertThat(exception).isNotNull();
 		assertThat(exception.getExceptionStatus()).isEqualTo(
-				SpellCheckerCliExceptionStatus.READING_ERROR);
+				SpellCheckerCliExceptionStatus.FILE_NOT_FOUND);
 	}
 
 	@Test

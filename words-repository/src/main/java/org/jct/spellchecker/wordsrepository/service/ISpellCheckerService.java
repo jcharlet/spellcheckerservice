@@ -1,13 +1,24 @@
 package org.jct.spellchecker.wordsrepository.service;
 
-import org.jct.spellchecker.wordsrepository.exception.SpellCheckerInvalidParameterException;
 
 public interface ISpellCheckerService {
 
-	boolean check(String shortCode, String name)
-			throws SpellCheckerInvalidParameterException;
+	/**
+	 * check whether a word is known in the common dictionary
+	 * 
+	 * @param shortCode
+	 * @param name
+	 * @return
+	 */
+	boolean check(String shortCode, String name);
 
-	boolean addWord(String shortCode, String name)
-			throws SpellCheckerInvalidParameterException;
+	/**
+	 * add a word to the dictionary
+	 * 
+	 * @param shortCode
+	 * @param name
+	 * @return
+	 */
+	boolean addWord(String shortCode, String name);
 
 }

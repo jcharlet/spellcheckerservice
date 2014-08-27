@@ -23,21 +23,30 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author Jarred Li
- *
+ * 
  */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
-public class MyBannerProvider extends DefaultBannerProvider  {
+public class MyBannerProvider extends DefaultBannerProvider {
 
 	public String getBanner() {
 		StringBuffer buf = new StringBuffer();
-		buf.append("=======================================" + OsUtils.LINE_SEPARATOR);
-		buf.append("*                                     *"+ OsUtils.LINE_SEPARATOR);
+		buf.append("======================================="
+).append(
+				OsUtils.LINE_SEPARATOR);
+		buf.append("*                                     *"
+).append(
+				OsUtils.LINE_SEPARATOR);
 		buf.append("*            Spell Checker            *"
-				+ OsUtils.LINE_SEPARATOR);
-		buf.append("*                                     *"+ OsUtils.LINE_SEPARATOR);
-		buf.append("=======================================" + OsUtils.LINE_SEPARATOR);
-		buf.append("Version:" + this.getVersion());
+).append(
+				OsUtils.LINE_SEPARATOR);
+		buf.append("*                                     *"
+).append(
+				OsUtils.LINE_SEPARATOR);
+		buf.append("======================================="
+).append(
+				OsUtils.LINE_SEPARATOR);
+		buf.append("Version:").append(this.getVersion());
 		return buf.toString();
 	}
 
@@ -50,11 +59,17 @@ public class MyBannerProvider extends DefaultBannerProvider  {
 		buf.append(
 				"To start with the spell checking, please provide the fileName of your file to parse")
 				.append(OsUtils.LINE_SEPARATOR);
-		buf.append("please type 'check --fileName myFile.txt'").append(
+		buf.append(
+				"with the following command: 'check --fileName myPath/to/myFile.txt'. The root path for the application is the folder from where you ran this application")
+				.append(
+OsUtils.LINE_SEPARATOR).append(OsUtils.LINE_SEPARATOR);
+		buf.append(
+				"you can quit the application at any time by typing 'exit'. type in 'help' to see other commands provided by Spring shell")
+				.append(
 				OsUtils.LINE_SEPARATOR);
 		return buf.toString();
 	}
-	
+
 	@Override
 	public String getProviderName() {
 		return "Hello World Banner";
